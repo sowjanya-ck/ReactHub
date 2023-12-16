@@ -4,6 +4,8 @@
   "description": "This is react-ep2",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index1.html",
+    "build":"parcel build index1.html",
     "test": "jest"
   },
   "repository": {
@@ -20,7 +22,7 @@
   },
   "homepage": "https://github.com/sowjanya-ck/ReactHub#readme",
   "devDependencies": {
-    "parcel": "^2.10.2",
+    "parcel": "^2.10.3",
     "process": "^0.11.10"
   },
   "dependencies": {
