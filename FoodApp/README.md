@@ -1,4 +1,20 @@
 ## build food app
+       
+              * Header
+              -logo
+              -nav items
+                     -about home etc links
+              * Body
+              -Search
+              -RestaurantContainer
+                     -RestarantCard
+                     -img,
+                     - name of restaurant, start rating,cuisine, delivery time
+              * Footer
+              -Copyright
+              -address
+              -contact
+              -links
 
 ### 1. plan the page 
 ### 2. make the res-card dynamic by props.
