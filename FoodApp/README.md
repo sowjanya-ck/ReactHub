@@ -25,3 +25,17 @@
 ### 3. make the res-card dynamic by json data,  
        -> always use a key, whenever looping the elements. 
           -> index as a key is not acceptable.
+
+### 4. two types of export/import
+       * default export/import
+         export default Component
+         import component from "path";
+       
+       * named export/import 
+         export const component
+         import {component} form "path";
+
+### 5. React hooks
+       - Normal js utilty functions
+       -useState()
+       -useEffect()

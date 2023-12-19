@@ -124,7 +124,7 @@ export const resList = [
           "Bakery",
           "Desserts"
         ],
-        "avgRating": 4.6,
+        "avgRating": 3.6,
         "feeDetails": {
           "restaurantId": "281469",
           "fees": [
@@ -142,7 +142,7 @@ export const resList = [
           "totalFee": 4100
         },
         "parentId": "10530",
-        "avgRatingString": "4.6",
+        "avgRatingString": "3.6",
         "totalRatingsString": "1K+",
         "sla": {
           "deliveryTime": 30,
@@ -248,7 +248,7 @@ export const resList = [
           "Snacks",
           "Fast Food"
         ],
-        "avgRating": 4,
+        "avgRating": 3.7,
         "feeDetails": {
           "restaurantId": "347868",
           "fees": [
@@ -341,7 +341,7 @@ export const resList = [
         "cuisines": [
           "Pizzas"
         ],
-        "avgRating": 4.1,
+        "avgRating": 3.8,
         "feeDetails": {
           "restaurantId": "10575",
           "fees": [
@@ -739,7 +739,7 @@ export const resList = [
           "Singaporean",
           "Desserts"
         ],
-        "avgRating": 4.4,
+        "avgRating": 3.4,
         "feeDetails": {
           "restaurantId": "29063",
           "fees": [
@@ -864,7 +864,7 @@ export const resList = [
           "Desserts",
           "Continental"
         ],
-        "avgRating": 4.5,
+        "avgRating": 3.5,
         "feeDetails": {
           "restaurantId": "342643",
           "fees": [
@@ -988,7 +988,7 @@ export const resList = [
           "Desserts",
           "Beverages"
         ],
-        "avgRating": 4.1,
+        "avgRating": 3.1,
         "feeDetails": {
           "restaurantId": "69876",
           "fees": [
@@ -1099,7 +1099,7 @@ export const resList = [
           "Sweets",
           "Chinese"
         ],
-        "avgRating": 4.5,
+        "avgRating": 3.5,
         "veg": true,
         "feeDetails": {
           "restaurantId": "12808",
