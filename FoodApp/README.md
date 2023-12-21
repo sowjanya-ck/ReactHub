@@ -37,5 +37,11 @@
 
 ### 5. React hooks
        - Normal js utilty functions
-       -useState()
+              -useState()
        -useEffect()
+
+### 6. virtual DOM concept
+       - DIff alogirthm finds out the difference btn old virtual dom and updated virtual dom and then updates the actual dom.
+       -virtual dom = it is the representation of the actual dom, its a react object.
+
+### 7.
