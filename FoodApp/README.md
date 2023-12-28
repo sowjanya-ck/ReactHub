@@ -48,3 +48,6 @@
 
 ### 7.2 useEffect() : called after the body compoenent renders.
         * resolve cors error by adding cors alow origin extension to chrome.
+
+### 7.3 use Shimmer ui
+        once the page renders, show some fake card ,instead of not showing anything.
