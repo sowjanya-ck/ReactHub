@@ -36,6 +36,7 @@
 .search{
     margin: 10px;
     padding: 20px;
+    margin-top: -10px;
 }
 .reslogo{
   width: 100%;
@@ -52,6 +53,9 @@
 .filter-btn{
     margin:10px;
     cursor: pointer;
+    width: 350px;
+    height: 30px;
+    padding: 10px;
 }
 .shimmer-container{
     display: flex;
