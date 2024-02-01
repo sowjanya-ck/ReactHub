@@ -33,6 +33,9 @@ const Body =()=>{
         <div className="body">
            
             <div className="filter"> 
+                <div className="search">
+                    
+                </div>
                 <button className="filter-btn" onClick={()=>{
                     console.log("clickeddd");
 

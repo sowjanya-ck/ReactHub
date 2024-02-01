@@ -51,3 +51,8 @@
 
 ### 7.3 use Shimmer ui
         once the page renders, show some fake card ,instead of not showing anything.
+
+### 8 add login logout button 
+       usuing usestate login and logout created by onclick event.
+### 8.1 create a search bar
+       
