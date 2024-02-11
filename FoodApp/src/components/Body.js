@@ -40,10 +40,10 @@ const Body =()=>{
                 <div className="search" >
                     <input type="text" className="search_box" value={searchText} onChange={(e)=>{setSeachText(e.target.value)}} />
                     <button onClick={()=>{
-                        const filterSearchRestaturent= listofRestaurants.filter((res)=>{res.info.name.includes(searchText)});
-                        setListofRestaurant(filterSearchRestaturent);
+                        const filterSearchRestaurant = listofRestaurants.filter((res) => res.info.name.includes(searchText));
+                        setListofRestaurant(filterSearchRestaurant);
 
-                        console.log(searchText)}} > search</button>
+                        }} > search</button>
 
                 </div>
                 <button className="filter-btn" onClick={()=>{
