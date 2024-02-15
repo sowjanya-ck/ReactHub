@@ -9,7 +9,8 @@ const Body =()=>{
     // const [listofRestaurants,setListofRestaurant]=useState(resList);
     // now we dont need mockdata 
     const [listofRestaurants,setListofRestaurant]=useState([]);
-
+    const [filteredRestaurant,setFileteredRestaruant]=useState([]);
+    
     const[searchText,setSeachText]=useState("");
 
     useEffect(()=>{
@@ -24,6 +25,7 @@ const Body =()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.3408807&lng=74.7421427&page_type=DESKTOP_WEB_LISTING");
         const convertJson= await data.json();
         setListofRestaurant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setFileteredRestaruant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         console.log(convertJson);
     };
     if (listofRestaurants.length ===0) {
@@ -40,8 +42,8 @@ const Body =()=>{
                 <div className="search" >
                     <input type="text" className="search_box" value={searchText} onChange={(e)=>{setSeachText(e.target.value)}} />
                     <button onClick={()=>{
-                        const filterSearchRestaurant = listofRestaurants.filter((res) => res.info.name.includes(searchText));
-                        setListofRestaurant(filterSearchRestaurant);
+                        const filterSearchRestaurant = listofRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setFileteredRestaruant(filterSearchRestaurant);
 
                         }} > search</button>
 
@@ -56,7 +58,7 @@ const Body =()=>{
             </div>
             <div className="res-container">
                {
-                listofRestaurants.map((res) => <ResCard key={res.info.id} resData={res}/>)
+                filteredRestaurant.map((res) => <ResCard key={res.info.id} resData={res}/>)
                }
                {/* <ResCard resData={resList[1]}/>
                 <ResCard resData={resList[2]}/>
