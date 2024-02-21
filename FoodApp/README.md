@@ -25,7 +25,7 @@
 ### 3. make the res-card dynamic by json data,  
        -> always use a key, whenever looping the elements. 
           -> index as a key is not acceptable.
-
+---- rafce ->short cut to create a compoenent
 ### 4. two types of export/import
        * default export/import
          export default Component
