@@ -46,7 +46,7 @@
 
 ### 7. useState()
 
-### 7.2 useEffect() : called after the body compoenent renders.
+### 7.2 useEffect() : called after the body compoenent renders.9
         * resolve cors error by adding cors alow origin extension to chrome.
 
 ### 7.3 use Shimmer ui
@@ -55,4 +55,20 @@
 ### 8 add login logout button 
        usuing usestate login and logout created by onclick event.
 ### 8.1 create a search bar
-       
+       -create one more use state for filteredrestarant, so that if the user search the partiucular restarant and sarch it again
+       , it will consider whole restaraunts and search the data. so bcs of this mainatin one more filteredrataurant and update the setfilertedrestarant after the search.
+
+### 9  useEffct and usestate recap
+### 9.1 useEffect 
+       -if no dependedncy array then useEffect is called on every rendering.
+       -if empty dependecy array present, usefecct is called on initial render(just once);
+       -if we put something inside the dependcy array then , useffect is called if the dependcy array changes.
+### 9.2 useState 
+       -never create a usestate outside of the component body. useState is used to create a local state variable isnide the functional component.
+       -dont create a state variable inside the if else condion , and for loop and inside the function though its isndie the body componet.
+       -always create a state variable in the top level of the functional component.
+
+### 9.3  React router
+
+
+
