@@ -70,5 +70,12 @@
 
 ### 9.3  React router
 
+### 9.4 navigation
+       -   its not good way to use anchor tag like below, because its refreshes the whole page. *
+                    <li>< a href="/about"> About us </a></li> 
+       - so use link to avoid the refresh.
+### 9.5 two types of routing in web appps
+       - client side routing
+       - Server side routing
 
 

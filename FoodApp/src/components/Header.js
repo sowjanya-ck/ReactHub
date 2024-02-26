@@ -1,5 +1,6 @@
 import { useState , useEffect} from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 const Header=()=>{
     const [btnName,setBtnName]= useState("Login");
     console.log("hereder rendered");
@@ -18,9 +19,10 @@ const Header=()=>{
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact Us</li>
+                    <li><Link to ="/">Home</Link></li>
+                    {/* its not good way to use anchor tag, because its refreshes the whole page. */}
+                    <li>< a href="/about"> About us </a></li> 
+                    <li><Link to="/contact-us">Contact Us</Link></li>
                     <li>Cart</li>
                     <button onClick={()=>{ btnName ==="Login" ?setBtnName("Logout") : setBtnName("Login");}}>{btnName}</button>
                 </ul>
