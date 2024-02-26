@@ -79,3 +79,5 @@
        - Server side routing
 
 
+### 9.6   pass dynamic data by using column
+       -  path: "/restaurants/:redId", here :resId is dynamic
