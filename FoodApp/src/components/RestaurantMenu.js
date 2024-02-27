@@ -12,26 +12,34 @@ const RestaurantMenu = () =>{
 const fetchMenu = async () => {
     console.log("hiiii")
     const data = await fetch(
-        'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+        'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.96340&lng=77.58550&restaurantId=61790&catalog_qa=undefined&submitAction=ENTER'
     );
     const menujson = await data.json();
     console.log(menujson);
 
     setResMenu(menujson);
 };
-const restaurantInfo = resMenu?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info;
+if (resMenu === null ) return <Shimmer/>
 
-// const {resname,cuisines } = resMenu?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info;
+const {name, cuisines, costForTwo} = resMenu?.data?.cards[2]?.card?.card?.info;
+const { itemCards} = resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
 
-    return resMenu === null ? (
-        <Shimmer/>):(
+console.log({itemCards});
+
+    return (
         <div className="resMenu">
-            <h1>{restaurantInfo.name}</h1>
-            <h2>{restaurantInfo.cuisines}</h2>
+            <h1>{name}</h1>
+            <h2>{cuisines.join(",")}</h2>
             <ul>
-                <li>{restaurantInfo.costForTwo}</li>
-                <li>Biriyani</li>
-                <li>Burgres</li>
+                <li>{costForTwo/100}- cost for two</li>
+
+                <h3>Restaurants menu</h3>
+                {itemCards.map(item => 
+                <li key = {item.card.info.id}>
+                    {item.card.info.name} -{"Rs."} {item.card.info.price/100}</li>
+                )}
+                {/* {itemCards.map(item => item.card.info.name)} */}
+                {/* <li>{itemCards[0].card.info.name}</li>  destructing it like this and then map it */} 
             </ul>
         </div>
     )
