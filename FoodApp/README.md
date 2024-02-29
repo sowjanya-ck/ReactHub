@@ -80,4 +80,6 @@
 
 
 ### 9.6   pass dynamic data by using column
-       -  path: "/restaurants/:redId", here :resId is dynamic
+       -  path: "/restaurants/:resId", here :resId is dynamic
+       - using link action and dynamic id , each res card is clickable and goes to resmenu.
+
