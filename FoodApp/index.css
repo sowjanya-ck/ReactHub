@@ -75,3 +75,9 @@
     height: 50px;
     cursor: pointer;
 }
+.user_card{
+    width:50%;
+    padding:10px;
+    border:1px solid grey;
+    margin:10px;
+}

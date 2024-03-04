@@ -83,3 +83,10 @@
        -  path: "/restaurants/:resId", here :resId is dynamic
        - using link action and dynamic id , each res card is clickable and goes to resmenu.
 
+## expisode 08 
+### 9.7 Class based component
+       - class commpojent extends the react componet and it has render method , that return the some piece of jsx.
+       -to get the props inside the class component shoud create constructor and inside should write super(props).
+       - create a this.state inside the construtor and intiliaze the usestate params.
+       - here this.state which holds all the state variable.
+       - use this.setState({count: this.state.count +1})
