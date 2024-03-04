@@ -90,3 +90,6 @@
        - create a this.state inside the construtor and intiliaze the usestate params.
        - here this.state which holds all the state variable.
        - use this.setState({count: this.state.count +1})
+### 9.8 How it is class compoment mounted on the webpage?
+       -parent class then childern , then contrsturor , then render is called
+       - componetnDidmount will be called once the componet has been completetly mounted.
