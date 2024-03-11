@@ -115,5 +115,22 @@
        - react life cyclec has two phase : one is render phase thats inlcudes constructor and render method. second phase is commit phase which inlcudes updates the dom,  componentent did mount commit happnens. 
        - react batches the children render phase. so first completes the render mehtod. and then componnet did mount trigger.
 
-### 9.10 
+#### step by step: with live github api 
+     1. mounting cycle 
+       - constructor is called
+       - render dummy html 
+       - component did mount is called and 
+                     -fetch the gihthub api
+                     - this.setstate 
+       -
+    2. Update
+              - render happens with new api data
+              - html loads
+              -componet didupdate
+    3. componet unmount
+              - return once swithc to other componetn
+
+
+       -
+### 9.10 optimizing our app 
 
