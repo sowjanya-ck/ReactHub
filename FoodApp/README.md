@@ -92,4 +92,28 @@
        - use this.setState({count: this.state.count +1})
 ### 9.8 How it is class compoment mounted on the webpage?
        -parent class then childern , then contrsturor , then render is called
-       - componetnDidmount will be called once the componet has been completetly mounted.
+       - componetnDidmount will be called once the componet has been completetly mounted.(constructor, render- componetdimount)
+       -parent contrustor,parent render,childer contsure,childern render,childer didmount,parent did mount.
+       -
+
+### 9.9 react lifecycyel  vip
+       - parent contructor
+       -parent render
+       -      childern....
+       if there are multiple child classes then how it will work?
+       - parent contructor ,parent render
+              firt childe constctur
+              first childe render
+              (first coumpoent didmout not trigger here now.)
+              - second child contructor
+              -second chield render
+              -first componet didmount
+              secoond compoent didmout
+              -parent componet dicmlut
+
+       - why? 
+       - react life cyclec has two phase : one is render phase thats inlcudes constructor and render method. second phase is commit phase which inlcudes updates the dom,  componentent did mount commit happnens. 
+       - react batches the children render phase. so first completes the render mehtod. and then componnet did mount trigger.
+
+### 9.10 
+
