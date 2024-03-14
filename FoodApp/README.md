@@ -133,4 +133,9 @@
 
        -
 ### 9.10 optimizing our app 
+       - Custom hook. 
+              - we will create custom hook that will fetch the data and give it to restarantmenu.
+              - always start small letter 'use' will creating the cusotm hook.for ex, useRestarauntMenu.js
+              - hy
+
 
