@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
+import useOnlineStatuus from "../utils/useOnlineStatus";
+
 const Body =()=>{
     // const [listofRestaurants,setListofRestaurant]=useState(resList);
     // now we dont need mockdata 
@@ -28,12 +30,19 @@ const Body =()=>{
         setFileteredRestaruant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         console.log(convertJson);
     };
-    if (listofRestaurants.length ===0) {
-        return <Shimmer/>
-    }
+    // if (listofRestaurants.length ===0) {
+    //     return <Shimmer/>
+    // }
 
+    const onlineStatus = useOnlineStatuus();
+
+    if (!onlineStatus) 
+        return <h1>You're offline. Please connect to the internet.</h1>;
     
+    else if(listofRestaurants.length ===0)
+        return <Shimmer/>
     
+     else 
     return(
        
         <div className="body">
