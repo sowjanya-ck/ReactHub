@@ -6,6 +6,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import Grocery from "./components/Grocery";
 import RestaurantMenu from "./components/RestaurantMenu";
 import  {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
 
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
                 path: "/contact-us",
                 element: <Contact/>,
             },
+            // {
+            //     path: "/Grocery",
+            //     element: <Grocery/>,
+            // },
             {
                 path: "/restaurants/:resId", // here :resId is dynamic
                 element: <RestaurantMenu/>,
