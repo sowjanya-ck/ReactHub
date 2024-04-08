@@ -11,9 +11,11 @@ const RestaurantMenu = () =>{
 
 
     if (resMenu === null ) return <Shimmer/>
+    console.log("started resme");
+    console.log(resMenu.data.cards[2].card.card.info.name)
 
-    const {name, cuisines, costForTwo} = resMenu.data.cards[0].card.card.info;
-    const { itemCards} = resMenu?.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
+    const {name, cuisines, costForTwo} = resMenu.data.cards[2].card.card.info;
+    const { itemCards} = resMenu?.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
 
     console.log({itemCards});
 
