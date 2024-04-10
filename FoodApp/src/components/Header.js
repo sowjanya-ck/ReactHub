@@ -2,7 +2,6 @@ import { useState , useEffect} from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import Grocery from "./Grocery";
 const Header=()=>{
     const [btnName,setBtnName]= useState("Login");
     const onlineCheck = useOnlineStatus();
@@ -27,7 +26,7 @@ const Header=()=>{
                     {/* its not good way to use anchor tag, because its refreshes the whole page. */}
                     <li>< a href="/about"> About us </a></li> 
                     <li><Link to="/contact-us">Contact Us</Link></li>
-                    {/* <li><a href="/Grocery">Grocery</a></li> */}
+                    <li><a href="/Grocery">Grocery</a></li>
                     <li>Cart</li>
                     <button onClick={()=>{ btnName ==="Login" ?setBtnName("Logout") : setBtnName("Login");}}>{btnName}</button>
                 </ul>

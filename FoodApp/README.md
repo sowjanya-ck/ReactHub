@@ -138,5 +138,7 @@
               - always start small letter 'use' will creating the cusotm hook.for ex, useRestarauntMenu.js
               - built online - offline check status . using usefect and created a custom hook
               
-
+       - lazy loading: only load the page contnent wheenver we go to that page , not when the app loads .
+       -Lazy loading in React allows you to split your code into smaller chunks, loading only the code that is needed for a particular part of your application when it is actually required. This can improve the initial loading time of your application
+       -
 
