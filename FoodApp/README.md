@@ -140,5 +140,15 @@
               
        - lazy loading: only load the page contnent wheenver we go to that page , not when the app loads .
        -Lazy loading in React allows you to split your code into smaller chunks, loading only the code that is needed for a particular part of your application when it is actually required. This can improve the initial loading time of your application
-       -
+
+## Tailwand CSS
+use tailwand css IntelliSense extension 
+ - flex justify-between bg-pink-100 
+ - shadow-lg , for margin mb-4
+ - align-items: center = items-center
+ - specific size then w-[200px]
+ - flex-wrap
+ - #### if we dont get suggestion , then use ctrl+ spacebar
+ - 
+
 

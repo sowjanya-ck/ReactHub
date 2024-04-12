@@ -14,19 +14,19 @@ const Header=()=>{
         console.log("userEffect called");
     })
     return(
-        <div className="header">
+        <div className="flex justify-between bg-pink-100 shadow-lg mb-5">
             <div className="logo-items">
               
-                <img className="logo" src= {LOGO_URL}/>
+                <img className="w-56" src= {LOGO_URL}/>
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Online status: {onlineCheck ?  "🟢" : "🔴"}</li>
-                    <li><Link to ="/">Home</Link></li>
+            <div className="flex items-center">
+                <ul className="flex p-4 m-4ddd">
+                    <li className="px-4">Online status: {onlineCheck ?  "🟢" : "🔴"}</li>
+                    <li className="px-4"><Link to ="/">Home</Link></li>
                     {/* its not good way to use anchor tag, because its refreshes the whole page. */}
-                    <li>< a href="/about"> About us </a></li> 
-                    <li><Link to="/contact-us">Contact Us</Link></li>
-                    <li><a href="/Grocery">Grocery</a></li>
+                    <li className="px-4">< a href="/about"> About us </a></li> 
+                    <li className="px-4"><Link to="/contact-us">Contact Us</Link></li>
+                    <li className="px-4"><a href="/Grocery">Grocery</a></li>
                     <li>Cart</li>
                     <button onClick={()=>{ btnName ==="Login" ?setBtnName("Logout") : setBtnName("Login");}}>{btnName}</button>
                 </ul>
