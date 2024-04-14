@@ -149,6 +149,7 @@ use tailwand css IntelliSense extension
  - specific size then w-[200px]
  - flex-wrap
  - #### if we dont get suggestion , then use ctrl+ spacebar
- - 
+ - if we want to apply the css based on the size of the device then 
+  ex: lg:bg-green-200 => means if greater than lg then backgound color is green
 
 

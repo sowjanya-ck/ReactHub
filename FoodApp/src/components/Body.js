@@ -1,4 +1,4 @@
-import ResCard from "./ResCard"; 
+import ResCard, {withVeglabel} from "./ResCard"; 
 
 import { resList } from "../utils/mockData";
 import { useState, useEffect } from "react";
@@ -15,6 +15,7 @@ const Body =()=>{
     
     const[searchText,setSeachText]=useState("");
 
+    console.log(listofRestaurants);
     useEffect(()=>{
         console.log("this will render after the body component renders");
         fetchData();
@@ -24,8 +25,10 @@ const Body =()=>{
 
     // console.log("first called");
     const fetchData=async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.3408807&lng=74.7421427&page_type=DESKTOP_WEB_LISTING");
+        // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.3408807&lng=74.7421427&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const convertJson= await data.json();
+        console.log(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.avgRating);
         setListofRestaurant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         setFileteredRestaruant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         console.log(convertJson);
@@ -62,6 +65,7 @@ const Body =()=>{
                     // console.log("clickeddd");
 
                     const filterdRes=listofRestaurants.filter((res)=>res.info.avgRating>4.5);
+                    console.log(filterdRes);
                     setListofRestaurant(filterdRes);
                     
                 }}>Top-rated restaurants</button>
@@ -70,7 +74,10 @@ const Body =()=>{
             <div className="flex flex-wrap">
                {
                 filteredRestaurant.map((res) => 
-                <Link key= {res.info.id} to={"/restaurants/"+res.info.id}><ResCard resData={res}/></Link>
+                <Link key= {res.info.id} to={"/restaurants/"+res.info.id}>
+                    {/* if the restaurant is veg then add veg label */}
+                    <ResCard resData={res}/>
+                </Link>
                 )
                }
                {/* <ResCard resData={resList[1]}/>

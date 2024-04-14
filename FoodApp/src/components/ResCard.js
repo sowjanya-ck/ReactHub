@@ -4,7 +4,7 @@ const ResCard =(props)=>{
    const {name,cuisines,avgRating,costForTwo}=resData?.info;
    
     return (
-        <div className="m-4 p-2 w-[200px] bg-gray-100 rounded-lg" >
+        <div className="m-4 p-2 w-[200px] bg-gray-100 rounded-lg hover:bg-gray-200 shadow-lg" >
             
             <img className="rounded-lg" alt="res-logo" src={RES_URL+resData.info.cloudinaryImageId}/>
             <h3 className="font-bold py-4 text-lg">{name}</h3>
@@ -15,6 +15,17 @@ const ResCard =(props)=>{
     )
 
 }
+
+export const withVeglabel = (ResCard) =>{
+   return () => {
+    return(
+        <div className="">
+            <label>Veg</label>
+            <ResCard/>            
+        </div>
+    )
+};
+};
 // destrucring the props, this will give the same result as above
 // const ResCard =({resName,rate,time,cuisine})=>{
     

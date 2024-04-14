@@ -14,7 +14,7 @@ const Header=()=>{
         console.log("userEffect called");
     })
     return(
-        <div className="flex justify-between bg-pink-100 shadow-lg mb-5">
+        <div className="flex justify-between bg-pink-100 shadow-lg mb-5 sm:bg-yellow-100 lg:bg-green-100">
             <div className="logo-items">
               
                 <img className="w-56" src= {LOGO_URL}/>
