@@ -26,13 +26,14 @@ const Body =()=>{
     // console.log("first called");
     const fetchData=async ()=>{
         // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.3408807&lng=74.7421427&page_type=DESKTOP_WEB_LISTING");
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
         const convertJson= await data.json();
         console.log(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.avgRating);
-        setListofRestaurant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-        setFileteredRestaruant(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setListofRestaurant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFileteredRestaruant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(convertJson);
     };
+
     // if (listofRestaurants.length ===0) {
     //     return <Shimmer/>
     // }
@@ -42,7 +43,7 @@ const Body =()=>{
     if (!onlineStatus) 
         return <h1>You're offline. Please connect to the internet.</h1>;
     
-    else if(listofRestaurants.length ===0)
+    else if(!listofRestaurants || listofRestaurants.length ===0)
         return <Shimmer/>
     
      else 
@@ -64,9 +65,9 @@ const Body =()=>{
                 <button className="px-4 py-2 bg-gray-100 rounded-lg" onClick={()=>{
                     // console.log("clickeddd");
 
-                    const filterdRes=listofRestaurants.filter((res)=>res.info.avgRating>4.5);
+                    const filterdRes=listofRestaurants.filter((res)=>res.info.avgRating>4);
                     console.log(filterdRes);
-                    setListofRestaurant(filterdRes);
+                    setFileteredRestaruant(filterdRes);
                     
                 }}>Top-rated restaurants</button>
                 </div>
