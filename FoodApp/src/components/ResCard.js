@@ -12,16 +12,16 @@ const ResCard =(props)=>{
             <h4>{avgRating}</h4>
             <h4>{costForTwo}</h4>
         </div>
-    )
+    );
 
-}
+};
 
 export const withVeglabel = (ResCard) =>{
-   return () => {
+   return (props) => {
     return(
         <div className="">
-            <label>Veg</label>
-            <ResCard/>            
+            <label className="absolute mr-20 p-1 rounded-xl bg-lime-400">Veg</label>
+            <ResCard {...props} />            
         </div>
     )
 };

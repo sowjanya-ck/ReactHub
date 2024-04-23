@@ -14,8 +14,7 @@ const Body =()=>{
     const [filteredRestaurant,setFileteredRestaruant]=useState([]);
     
     const[searchText,setSeachText]=useState("");
-
-    console.log(listofRestaurants);
+    const ResCardVeg = withVeglabel(ResCard);
     useEffect(()=>{
         console.log("this will render after the body component renders");
         fetchData();
@@ -33,10 +32,6 @@ const Body =()=>{
         setFileteredRestaruant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(convertJson);
     };
-
-    // if (listofRestaurants.length ===0) {
-    //     return <Shimmer/>
-    // }
 
     const onlineStatus = useOnlineStatuus();
 
@@ -77,17 +72,18 @@ const Body =()=>{
                 filteredRestaurant.map((res) => 
                 <Link key= {res.info.id} to={"/restaurants/"+res.info.id}>
                     {/* if the restaurant is veg then add veg label */}
-                    <ResCard resData={res}/>
+                    
+                    {
+                        res.info.veg && res.info.veg?(
+                            <ResCardVeg resData = {res} />
+                        ) :
+                        (
+                            <ResCard resData = {res} />
+                        )
+                    }
                 </Link>
                 )
                }
-               {/* <ResCard resData={resList[1]}/>
-                <ResCard resData={resList[2]}/>
-                <ResCard resData={resList[3]}/>
-                <ResCard resData={resList[4]}/> */}
-          {/* we can reduce this code by using map.  */}
-               
-        
             </div>
         </div>
     )

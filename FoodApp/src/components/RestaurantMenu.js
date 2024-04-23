@@ -27,7 +27,7 @@ const RestaurantMenu = () =>{
                 <li>{costForTwo/100}- cost for two</li>
 
                 <h3>Restaurants menu</h3>
-                {itemCards.map(item => 
+                {itemCards && itemCards.map(item => 
                 <li key = {item.card.info.id}>
                     {item.card.info.name} -{"Rs."} {item.card.info.price/100}</li>
                 )}
