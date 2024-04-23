@@ -152,4 +152,10 @@ use tailwand css IntelliSense extension
  - if we want to apply the css based on the size of the device then 
   ex: lg:bg-green-200 => means if greater than lg then backgound color is green
 
+### 11 episode data is the new oil  
+## higher order compoent 
+  - its  a function that takes a component as an argument and returns a new component that wraps the original component.
+  - basically it takes the data from the original compoent and enhance it , returns new componet from it.
+  - use spread operator. <ResCard {...props} /> which takes all the props thats in the parent compoent too.
+
 
