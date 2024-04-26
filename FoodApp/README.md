@@ -159,5 +159,8 @@ use tailwand css IntelliSense extension
   - use spread operator. <ResCard {...props} /> which takes all the props thats in the parent compoent too.
 ### use accordian to collapse and show. 
 ### for each itemcategory build an accordian 
+- if the parent compoent controlling  its child componet  then child compoent is controlled component. 
+- here ResCateorgy is controlled compknet  as its controlled by its parent restaruant Menu component. how bsc passing the showitems as a props and controlling through parent compoent.
+
 
 
