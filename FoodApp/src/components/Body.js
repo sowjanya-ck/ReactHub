@@ -22,15 +22,13 @@ const Body =()=>{
     },[]);
     //       whnerver a state variable gets update, react triggers a reconcilation cycle.(re-renders the componennet)
 
-    // console.log("first called");
     const fetchData=async ()=>{
         // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.3408807&lng=74.7421427&page_type=DESKTOP_WEB_LISTING");
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
         const convertJson= await data.json();
-        console.log(convertJson.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.avgRating);
         setListofRestaurant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFileteredRestaruant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log(convertJson);
+        console.log();
     };
 
     const onlineStatus = useOnlineStatuus();

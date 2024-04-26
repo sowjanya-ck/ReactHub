@@ -157,5 +157,7 @@ use tailwand css IntelliSense extension
   - its  a function that takes a component as an argument and returns a new component that wraps the original component.
   - basically it takes the data from the original compoent and enhance it , returns new componet from it.
   - use spread operator. <ResCard {...props} /> which takes all the props thats in the parent compoent too.
+### use accordian to collapse and show. 
+### for each itemcategory build an accordian 
 
 

@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import Shimmer from "./Shimmer";
+import ResCategory from './ResCategory';
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 const RestaurantMenu = () =>{
 
@@ -12,28 +13,22 @@ const RestaurantMenu = () =>{
 
     if (resMenu === null ) return <Shimmer/>
     console.log("started resme");
-    console.log(resMenu.data.cards[2].card.card.info.name)
 
     const {name, cuisines, costForTwo} = resMenu.data.cards[2].card.card.info;
     const { itemCards} = resMenu?.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
-
-    console.log({itemCards});
-
+    const cardCategories = resMenu?.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    console.log(cardCategories);
     return (
-        <div className="resMenu">
-            <h1>{name}</h1>
-            <h2>{cuisines.join(",")}</h2>
-            <ul>
-                <li>{costForTwo/100}- cost for two</li>
-
-                <h3>Restaurants menu</h3>
-                {itemCards && itemCards.map(item => 
-                <li key = {item.card.info.id}>
-                    {item.card.info.name} -{"Rs."} {item.card.info.price/100}</li>
-                )}
-                {/* {itemCards.map(item => item.card.info.name)} */}
-                {/* <li>{itemCards[0].card.info.name}</li>  destructing it like this and then map it */} 
-            </ul>
+        <div className="text-center">
+            <h1 className='font-bold my-6 text-2xl'>{name}</h1>
+            <p className='font-bold text-lg'>{cuisines.join(",")}</p>
+            
+        {cardCategories.map((category) => (
+                <ResCategory
+                key={category?.card?.card.title}
+                data={category?.card?.card}
+                />
+        ))}
         </div>
     )
 }
