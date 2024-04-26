@@ -27,7 +27,6 @@ const Header=()=>{
                     <li className="px-4">< a href="/about"> About us </a></li> 
                     <li className="px-4"><Link to="/contact-us">Contact Us</Link></li>
                     <li className="px-4"><a href="/Grocery">Grocery</a></li>
-                    <li>Cart</li>
                     <button onClick={()=>{ btnName ==="Login" ?setBtnName("Logout") : setBtnName("Login");}}>{btnName}</button>
                 </ul>
 
