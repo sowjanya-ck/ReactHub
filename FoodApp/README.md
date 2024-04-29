@@ -175,4 +175,7 @@ use tailwand css IntelliSense extension
 
 
 ### 11.3.2 how can we modify the context data?
-       using provider .
+       using provider . 
+       wrapping the component which we want to modify the data using provider.for example like this, <UserContext.Provider value={{loggedUser:userName}}>
+    -> what will happen if we bound the compoennt with diff provider value, will it takes parent one ? or what?
+       data will be overridden, so it will take latest modifed one not the first one or parent one.

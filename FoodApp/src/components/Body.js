@@ -1,9 +1,10 @@
 import ResCard, {withVeglabel} from "./ResCard"; 
 
 import { resList } from "../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 import useOnlineStatuus from "../utils/useOnlineStatus";
 
@@ -31,6 +32,7 @@ const Body =()=>{
     };
 
     const onlineStatus = useOnlineStatuus();
+    const {loggedUser,setUserName} = useContext(UserContext);
 
     if (!onlineStatus) 
         return <h1>You're offline. Please connect to the internet.</h1>;
@@ -59,8 +61,13 @@ const Body =()=>{
                     const filterdRes=listofRestaurants.filter((res)=>res.info.avgRating>4);
                     setFileteredRestaruant(filterdRes);
                     
-                }}>Top-rated restaurants</button>
+                }}>Top-rated restaurants </button>
                 </div>
+                <div className="m-4 p-4 flex items-center">
+                <label>User name :  </label>
+                <input className="border border-black" value={loggedUser} onChange = {(e) => setUserName(e.target.value) }/>
+                </div>
+
             </div>
             <div className="flex flex-wrap">
                {

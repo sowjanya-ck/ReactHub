@@ -7,6 +7,7 @@ const Header=()=>{
     const [btnName,setBtnName]= useState("Login");
     const onlineCheck = useOnlineStatus();
     const {loggedUser} = useContext(UserContext);
+    console.log({loggedUser})
     // console.log("hereder rendered");
     //if no dependedncy array then useEffect is called on every rendering.
     //if empty dependecy array present, usefecct is called on initial render(just once);
