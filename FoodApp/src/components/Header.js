@@ -1,11 +1,13 @@
-import { useState , useEffect} from "react";
+import { useState , useEffect, useContext} from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Header=()=>{
     const [btnName,setBtnName]= useState("Login");
     const onlineCheck = useOnlineStatus();
-    console.log("hereder rendered");
+    const {loggedUser} = useContext(UserContext);
+    // console.log("hereder rendered");
     //if no dependedncy array then useEffect is called on every rendering.
     //if empty dependecy array present, usefecct is called on initial render(just once);
     //if we put something inside the dependcy array then , useffect is called if the dependcy array changes.
@@ -28,6 +30,7 @@ const Header=()=>{
                     <li className="px-4"><Link to="/contact-us">Contact Us</Link></li>
                     <li className="px-4"><a href="/Grocery">Grocery</a></li>
                     <button onClick={()=>{ btnName ==="Login" ?setBtnName("Logout") : setBtnName("Login");}}>{btnName}</button>
+                    <li className="px-4" >{loggedUser}</li>
                 </ul>
 
             </div>

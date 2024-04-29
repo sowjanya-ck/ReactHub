@@ -163,4 +163,16 @@ use tailwand css IntelliSense extension
 - here ResCateorgy is controlled compknet  as its controlled by its parent restaruant Menu component. how bsc passing the showitems as a props and controlling through parent compoent.
 
 
+### 11.3 props drilling 
+       -the process of passing data from a parent component down to nested child components through props.
+       - this can be cured using context. 
+### 11.3.1 context 
+       - createContext is a method provided by React's Context API that facilitates a way to pass data through the component tree without having to pass props down manually at every level.
+       - and useContext hook provides function components access to the context value for a context object.
+        - so using the context we can pass the props to any component by aviding the props drilling.     
+       - can access the context in class component also by using .consumer.
+       - for example <UserContext.Consumer>{({data}) => ({data})}</UserContext.Consumer>>
 
+
+### 11.3.2 how can we modify the context data?
+       using provider .

@@ -4,7 +4,7 @@ const ResCategory = ({data, showItems, setIndex}) =>{
     console.log({setIndex});
     // const [showItems, setShowItems] = useState(false);
     const handleClick = () => {
-        setIndex(true);
+        setIndex(); // call the function and then set the index to clicked accoordian
     }
     return(
         <div>

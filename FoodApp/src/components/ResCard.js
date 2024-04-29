@@ -1,7 +1,11 @@
 import { RES_URL } from "../utils/constants";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const ResCard =(props)=>{
    const {resData}=props;
    const {name,cuisines,avgRating,costForTwo}=resData?.info;
+   const {loggedUser} = useContext(UserContext);
+
    
     return (
         <div className="m-4 p-2 w-[200px] bg-gray-100 rounded-lg hover:bg-gray-200 shadow-lg" >
@@ -11,6 +15,7 @@ const ResCard =(props)=>{
             <h4> {cuisines.join(", ")}</h4>
             <h4>{avgRating}</h4>
             <h4>{costForTwo}</h4>
+            <h4>{loggedUser}</h4>
         </div>
     );
 

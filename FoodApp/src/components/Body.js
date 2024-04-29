@@ -16,7 +16,7 @@ const Body =()=>{
     const[searchText,setSeachText]=useState("");
     const ResCardVeg = withVeglabel(ResCard);
     useEffect(()=>{
-        console.log("this will render after the body component renders");
+        // console.log("this will render after the body component renders");
         fetchData();
 
     },[]);
@@ -28,7 +28,6 @@ const Body =()=>{
         const convertJson= await data.json();
         setListofRestaurant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFileteredRestaruant(convertJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log();
     };
 
     const onlineStatus = useOnlineStatuus();
@@ -56,10 +55,8 @@ const Body =()=>{
                 </div>
                 <div className="m-4 p-4 flex items-center">
                 <button className="px-4 py-2 bg-gray-100 rounded-lg" onClick={()=>{
-                    // console.log("clickeddd");
 
                     const filterdRes=listofRestaurants.filter((res)=>res.info.avgRating>4);
-                    console.log(filterdRes);
                     setFileteredRestaruant(filterdRes);
                     
                 }}>Top-rated restaurants</button>
