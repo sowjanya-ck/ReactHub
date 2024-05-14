@@ -179,3 +179,27 @@ use tailwand css IntelliSense extension
        wrapping the component which we want to modify the data using provider.for example like this, <UserContext.Provider value={{loggedUser:userName}}>
     -> what will happen if we bound the compoennt with diff provider value, will it takes parent one ? or what?
        data will be overridden, so it will take latest modifed one not the first one or parent one.
+
+## 12. what is redux in react?
+       - react and redux are two fiff library.
+       - we can build the application without redux also.
+       - redux is a state management tool in react.
+       - help us to debug the application easily.
+
+       redux tookkit is advanced that the rudex.
+
+## 12.1 add a items to cart 
+       - install @redux/toolkit and react-redux
+       - click on add+ -> disaptch a action -> calls a function-> increments the cart(modifies the cart)
+       -> call a function called - calls reducer function
+
+       -> selector will reads the data or the cart and mdofies the react compoent of the cart
+
+## 12.2 steps involves
+       - build oour store
+       -connect our store to our app
+       -slice(Cartslice)
+       -dispact action
+       - selector
+       
+
