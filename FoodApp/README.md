@@ -201,5 +201,8 @@ use tailwand css IntelliSense extension
        -slice(Cartslice)
        -dispact action
        - selector
+### 12.3 
+       - use useSelector hook for react-redux library.
+       
        
 
