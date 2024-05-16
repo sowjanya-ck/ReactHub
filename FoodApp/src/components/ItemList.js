@@ -1,7 +1,15 @@
 import { RES_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 const ItemList = ({items}) => {
     console.log("sowj")
     console.log(items);
+
+    const handleItem = (e) => {
+        //dispatch(will get from useDipstch hook) an action
+        dispatch(addItem(e));
+    }
     return(
         <div>
             <ul>
@@ -18,7 +26,9 @@ const ItemList = ({items}) => {
                         </div>
                         <div className="w-3/12 p-4 ">
                             <div className="absolute">
-                                <button className="bg-white p-1 mx-1 mt-[-20] shadow-lg rounded-lg ">Add +</button>
+                                <button className="bg-white p-1 mx-1 mt-[-20] shadow-lg rounded-lg "
+                                onClick={handleItem}>
+                                    Add +</button>
                             </div>
                             <img src={RES_URL + item.card.info.imageId } className="border rounded-md"/>
                         </div>
