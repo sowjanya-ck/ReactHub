@@ -17,6 +17,7 @@ const Header=()=>{
     
         // subscribing to store using the selector
     const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
 
     useEffect(()=>{
         console.log("userEffect called");
@@ -35,7 +36,7 @@ const Header=()=>{
                     {/* its not good way to use anchor tag, because its refreshes the whole page. */}
                     <li className="px-4">< a href="/about"> About us </a></li> 
                     <li className="px-4"><Link to="/contact-us">Contact Us</Link></li>
-                    <li className="px-4"> Cart({cartItems.length}) </li> 
+                    <li className="px-4"><Link to="/cart"> Cart({cartItems.length})</Link> </li> 
                     <li className="px-4"><a href="/Grocery">Grocery</a></li>
                     <button onClick={()=>{ btnName ==="Login" ?setBtnName("Logout") : setBtnName("Login");}}>{btnName}</button>
                     <li className="px-4" >{loggedUser}</li>

@@ -12,6 +12,7 @@ import  {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
 import UserContext from './utils/UserContext';
 import { Provider, useDispatch} from "react-redux"
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const Grocery = lazy(()=>import("./components/Grocery"));
 
@@ -64,9 +65,12 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/restaurants/:resId", // here :resId is dynamic
-                element: <RestaurantMenu/>,
-                
+                element: <RestaurantMenu/>,   
             },
+            {
+                path: "/cart",
+                element: <Cart/>
+            }
 
         ],
         errorElement: <Error/>,
