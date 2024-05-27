@@ -203,6 +203,9 @@ use tailwand css IntelliSense extension
        - selector
 ### 12.3 
        - use useSelector hook for react-redux library.
+advantge or imp of redux .
+       - in older redux - mutate state is prohibitated. 
+       -in older version, we need to create newstate then psuh it , then need to return.now we can mutate state.
        
        
 
