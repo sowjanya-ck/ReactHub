@@ -17,3 +17,4 @@ netflixgpt
     - movie suggestions
     
 
+rafce - shortcut to create the functional component

@@ -4,7 +4,7 @@ import Body from './components/Body';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App text-medium ">
       <Body/>
     </div>
   );
