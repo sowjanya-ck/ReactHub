@@ -18,3 +18,9 @@ netflixgpt
     
 
 rafce - shortcut to create the functional component
+
+
+## steps
+ - Header (bg- logo)
+ - login form 
+ - sing up form
