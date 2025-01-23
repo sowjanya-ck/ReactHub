@@ -24,3 +24,7 @@ rafce - shortcut to create the functional component
  - Header (bg- logo)
  - login form 
  - sing up form
+
+## sing in signup form 
+    - formik library is good to use for form
+    
