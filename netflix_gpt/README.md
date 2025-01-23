@@ -25,6 +25,8 @@ rafce - shortcut to create the functional component
  - login form 
  - sing up form
 
-## sing in signup form 
+## sing in signup form validation
     - formik library is good to use for form
+    - userRef hook -(refer the input field)
+
     
