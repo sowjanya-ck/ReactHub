@@ -29,4 +29,9 @@ rafce - shortcut to create the functional component
     - formik library is good to use for form
     - userRef hook -(refer the input field)
 
-    
+## firebase configuration
+    - npm install firebase
+    -  npm install -g firebase-tools 
+    - firebase login - command to check login else reidict to login 
+    - firebase init 
+
