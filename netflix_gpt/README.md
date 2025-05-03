@@ -1,6 +1,13 @@
 # netflix gpt
     - create react app
     - configured tailwand css
+    - header 
+    - routing of app
+    - login and signup form
+    form validation
+    - useref hook
+    -firebase setup
+    - deploy to production
 
 # feature 
 login/sign up
@@ -33,5 +40,14 @@ rafce - shortcut to create the functional component
     - npm install firebase
     -  npm install -g firebase-tools 
     - firebase login - command to check login else reidict to login 
-    - firebase init 
+    - firebase init (select build as your public directory - if its app created using create react app)
+    - firebase deploy
+         app is deployed now .(url - https://netflix-gpt-964f2.web.app/)
+    
+    - authentication done
+## redux toolkit
+    - npm i -D @reduxjs/toolkit
+    - create a redux store with user account
+    
+    
 
