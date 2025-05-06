@@ -50,4 +50,7 @@ rafce - shortcut to create the functional component
     - create a redux store with user account
     
     
-
+## bug fixes
+    - without login user shoud not have the access to browse page. and vice versa, so after onAuthStateChanged check , can redirect to browse or login page,but
+    - we can only use navigate inside the component or child component of the routes.. for example body ,login ,hader. 
+    - so better keep inside the header becuase header used in evrywhere.

@@ -4,7 +4,6 @@ import { useState, useRef } from 'react'
 import {checkEmailValidate} from "../utils/validation"
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword  } from "firebase/auth";
 import {auth} from '../utils/firebase'
-import { useNavigate } from 'react-router-dom';
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
@@ -16,7 +15,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // useref helps to the reference to th input field
@@ -35,19 +33,15 @@ const Login = () => {
         .then((userCredential) => {
           // if its sunccessful then we can get the user credential
           const user = userCredential.user;
-          console.log(name.current.value);
           updateProfile(user, {
             displayName: name.current.value, photoURL: "https://thumbs.dreamstime.com/b/solitary-gentoo-penguin-stands-gracefully-icy-landscape-surrounded-soft-pastel-backdrop-enhances-its-striking-345021648.jpg"
           }).then(() => {
             const {uid,email,displayName,photoURL} = auth.currentUser;
             dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-            navigate("/browse");
-
           }).catch((error) => {
             setErrorMessage(error.message);
            
           });
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -60,8 +54,6 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/browse");
-        console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
