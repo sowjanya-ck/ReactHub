@@ -209,3 +209,11 @@ advantge or imp of redux .
        
        
 
+## 13
+       React-Redux 
+       - How it works ? with Example .
+         When user clicks on the add button, it dispatch a action , calls the function (this is called reduceer) , that function modifies the slice of the cart of the redux store.
+       - How to read the data from the strore , AFter its get update?
+         Using selector
+       - Header is Subscribing to the store ->It means once the store gets updates, it will updates in the cart of the header.
+       
