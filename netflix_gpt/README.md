@@ -54,3 +54,14 @@ rafce - shortcut to create the functional component
     - without login user shoud not have the access to browse page. and vice versa, so after onAuthStateChanged check , can redirect to browse or login page,but
     - we can only use navigate inside the component or child component of the routes.. for example body ,login ,hader. 
     - so better keep inside the header becuase header used in evrywhere.
+    - create constants file to keep all constanst var
+    
+## TMDB api
+    - register for an tmdb api and create an application && get access token 
+    -make an api call for movies 
+    - 
+
+
+
+### Notes
+    React.StrictMode is a development tool in React that helps identify potential problems in your application. It intentionally invokes certain lifecycle methods and effects twice in development mode to catch unexpected side effects or bugs. This behavior only occurs in development (local)and does not affect the production build.

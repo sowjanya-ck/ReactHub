@@ -7,6 +7,7 @@ import {auth} from '../utils/firebase'
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { USER_DP } from '../utils/constants';
 
 const Login = () => {
   const [issignInForm, setIsSignInForm] = useState(true)
@@ -28,16 +29,15 @@ const Login = () => {
     // if no error message then we can proceed to sign in or sign up
 
     if(!issignInForm) {
-      console.log("Sign Up");
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           // if its sunccessful then we can get the user credential
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value, photoURL: "https://thumbs.dreamstime.com/b/solitary-gentoo-penguin-stands-gracefully-icy-landscape-surrounded-soft-pastel-backdrop-enhances-its-striking-345021648.jpg"
+            displayName: name.current.value, photoURL: USER_DP
           }).then(() => {
             const {uid,email,displayName,photoURL} = auth.currentUser;
-            dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
+            dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: USER_DP}));
           }).catch((error) => {
             setErrorMessage(error.message);
            

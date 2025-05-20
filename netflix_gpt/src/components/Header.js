@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser,removeUser } from '../utils/userSlice';
 import { useEffect } from 'react';
+import {LOGO} from "../utils/constants"
 
 const Header = () => {
   const navigate = useNavigate();
@@ -50,13 +51,12 @@ const Header = () => {
       {user && (
         <div
           className="relative flex items-center"
-          onMouseEnter={() => setDropdownVisible(true)}
-          onMouseLeave={() => setDropdownVisible(false)}
         >
           <img
             className="w-10 h-10 rounded-full cursor-pointer"
             src={user?.photoURL}
             alt="User"
+            onClick={() => setDropdownVisible((prev) => !prev)} // Toggle dropdown on click
           />
           {dropdownVisible && (
             <div className="absolute top-12 right-0 bg-black text-white rounded shadow-lg p-4 z-30">
