@@ -217,3 +217,14 @@ advantge or imp of redux .
          Using selector
        - Header is Subscribing to the store ->It means once the store gets updates, it will updates in the cart of the header.
        
+
+## 13.1 Best Practices for Subscribing to the Redux Store
+       const store = useSelector((store) => store)
+       const cartItems = store.cart.items;
+       This approach is not efficient if you only need cartItems. With this code, any change in the store will cause a re-render, even if cartItems didn't change. Always subscribe only to the specific part of the store that your component needs(selecting the portion of the store.).
+
+     so use like this -  subscribing to store using the selector
+       const cartItems = useSelector((store) => store.cart.items)
+
+- CAN use current(state) -> will print the state properly. 
+- redux dev chrome extension - will be useful debug 

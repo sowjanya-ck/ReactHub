@@ -13,6 +13,8 @@ const cartSlice = createSlice({
                 state.items.pop();
         },
             clearCart: (state) =>{
+                // we cant DO LIKE STATE = [] because it will not work in redux toolkit
+                //THIS WONT CHANGE THE ORIGINAL STATE
                 state.items.length=0;
             },
         },

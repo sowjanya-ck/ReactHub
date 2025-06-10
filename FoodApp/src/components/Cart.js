@@ -7,6 +7,12 @@ const Cart = () => {
     const handleClear =() =>{
         dispatch(clearCart()) ; 
     }
+
+    //  const store = useSelector((store) => store)
+    //  const cartItems = store.cart.items;
+    // Dont use like above, because it will re-render the whole component if any value in the store changes.
+
+     // subscribing to store using the selector
     const cartItems = useSelector((store) => store.cart.items)
     return <div className="text-center m-4 p-4">
         <h1 className="font-bold">Cart items list </h1>
